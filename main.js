@@ -2,6 +2,10 @@ const express = require('express')
 const router = require('./router')
 const settings = require('./settings/settings')
 
+//const jwtLib=require('./libs/jwtLib')
+//console.log(jwtLib.sign())
+
+
 const main = ()=>{
     let app = express()
 

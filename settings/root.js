@@ -2,6 +2,9 @@ let settings = {
     app: {
         listeningPort: 8094
     },
+    jwt: {
+        secret: "Ideo+-Streaming"
+    },
     db: {
         dbType: 'sqlite',
         dbName: './IdeoStreaming.db'
