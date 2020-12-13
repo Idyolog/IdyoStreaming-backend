@@ -1,17 +1,17 @@
-# IdeoStreaming-backend
-### What is IdeoStreaming-backend
-IdeoStreaming-backend is a backend used by the IdeoStreaming platform that allows you to stream contents from several sources to several outputs.  
-IdeoStreaming platform is composed by a backend and a yocto layer that can be used to compose your Embedded Linux distribution, ready to stream contents over the internet or maybe just over a file.
-### What can I do with IdeoStreaming-backend?
+# IdyoStreaming-backend
+### What is IdyoStreaming-backend
+IdyoStreaming-backend is a backend used by the IdyoStreaming platform that allows you to stream contents from several sources to several outputs.  
+IdyoStreaming platform is composed by a backend and a yocto layer that can be used to compose your Embedded Linux distribution, ready to stream contents over the internet or maybe just over a file.
+### What can I do with IdyoStreaming-backend?
 You can configure the inputs and the outputs of your stream by CRUD endpoits and you can start and stop the stream by streaming endpoints.
 ### Technologies and Dependencies
-IdeoStreaming-backend uses ffmpeg to stream, so it has to be installed on your system.
+IdyoStreaming-backend uses ffmpeg to stream, so it has to be installed on your system.
 ### System Configuration
 Settings folder contains the configuration. You can configure multiple enviroments simply creating a new js file and requiring root.js file, which contains the dafault settings.  
 Here is an example of development enviroment, which redefines some properties
 ```javascript
 let  settings = require('./root')
-settings.db.dbName = "C:/test/IdeoStreaming.db"
+settings.db.dbName = "C:/test/IdyoStreaming.db"
 settings.ffmpeg.start.input.webcam.command = '-y -f vfwcap -r 25 -i %%input%%'
 settings.ffmpeg.stop.command = 'Taskkill /IM ffmpeg.exe /F'
 module.exports = settings
