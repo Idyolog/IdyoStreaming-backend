@@ -1,7 +1,18 @@
-const dsService = require('./services/datasourceServices')
+const express = require('express')
+const router = require('./router')
+const settings = require('./settings/settings')
 
 const main = ()=>{
-    dsService.getAllOutputTypes()
+    let app = express()
+
+    app.use(express.json()) // for parsing application/json
+    app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+
+    router(express, app)
+
+    app.listen(settings.app.listeningPort, () => {
+        console.log(`IseoStreaming listening on port ${settings.app.listeningPort}`)
+    })
 }
 
 main()

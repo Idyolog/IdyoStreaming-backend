@@ -1,10 +1,9 @@
 const dao = require('../dao/index')
 
 const datasourceServices = {
-    getAllOutputTypes: async () =>{
+    getAllOutputTypes: () =>{
         try{
-            const d = await dao
-            const outTypes = await d.OutputTypes.getAll()
+            const outTypes = dao.OutputTypes.getAll()
             console.log(outTypes)
         } catch(e){
             console.log(e)
