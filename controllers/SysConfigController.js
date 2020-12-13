@@ -15,7 +15,6 @@ const SysConfigController = (app) => {
 
     router.post('/output', async (req, res)=>{
         const body = req.body
-        console.log(body)
         try{
             await sysConfigService.addOutput(body)
             res.status(201).end()
@@ -27,9 +26,19 @@ const SysConfigController = (app) => {
 
     router.put('/output', async (req,res)=>{
         const body = req.body
-        console.log(body)
         try{
             await sysConfigService.updateOutput(body)
+            res.status(201).end()
+        } catch(e){
+            console.log(e)
+            res.status(500).end()
+        }
+    })
+
+    router.delete('/output', async (req,res)=>{
+        const body = req.body
+        try{
+            await sysConfigService.deleteOutput(body)
             res.status(201).end()
         } catch(e){
             console.log(e)
@@ -49,7 +58,6 @@ const SysConfigController = (app) => {
 
     router.post('/input', async (req, res)=>{
         const body = req.body
-        console.log(body)
         try{
             await sysConfigService.addInput(body)
             res.status(201).end()
@@ -61,9 +69,19 @@ const SysConfigController = (app) => {
 
     router.put('/input', async (req, res)=>{
         const body = req.body
-        console.log(body)
         try{
             await sysConfigService.updateInput(body)
+            res.status(201).end()
+        } catch(e){
+            console.log(e)
+            res.status(500).end()
+        }
+    })
+
+    router.delete('/input', async (req, res)=>{
+        const body = req.body
+        try{
+            await sysConfigService.deleteInput(body)
             res.status(201).end()
         } catch(e){
             console.log(e)

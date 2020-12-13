@@ -39,6 +39,13 @@ const sysConfigServices = {
         return dao.OutputsDao.updateOutput(output)
     },
 
+    deleteOutput: (output)=>{
+        if(output == null){
+            throw "Error addOutput"
+        }
+        return dao.OutputsDao.deleteOutput(output)
+    },
+
     getAllInputs: () => {
         return dao.InputsDao.getAll()
     },
@@ -75,6 +82,13 @@ const sysConfigServices = {
             throw "Error addOutput"
         }
         return dao.InputsDao.updateInput(input)
+    },
+
+    deleteInput: (input)=>{
+        if(input == null){
+            throw "Error addOutput"
+        }
+        return dao.InputsDao.deleteInput(input)
     }
 }
 

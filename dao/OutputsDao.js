@@ -20,6 +20,13 @@ const OutputsDao = {
         
         return dbHandler.executePreparedQuery(query, [output.outputType,output.active,output.output])
         
+    },
+
+    deleteOutput: (output)=>{
+        const query = "DELETE FROM Outputs WHERE output=?;"
+        
+        return dbHandler.executePreparedQuery(query, [output.output])
+        
     }
 }
 

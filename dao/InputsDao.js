@@ -20,6 +20,13 @@ const InputsDao = {
         
         return dbHandler.executePreparedQuery(query, [input.inputType,input.active,input.input])
         
+    },
+
+    deleteInput: (input)=>{
+        const query = "DELETE FROM Inputs WHERE input=?;"
+        
+        return dbHandler.executePreparedQuery(query, [input.input])
+        
     }
 }
 
