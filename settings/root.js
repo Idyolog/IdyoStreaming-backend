@@ -16,7 +16,7 @@ let settings = {
         start:{
             input:{
                 webcam:{
-                    command:'-y -f vfwcap -r 25 -i %%input%%'
+                    command:'-f v4l2 -framerate 25 -video_size 640x480 -i %%input%%'
                 }
             },
             output:{
@@ -29,7 +29,7 @@ let settings = {
             }
         },
         stop:{
-            command:'Taskkill /IM ffmpeg.exe /F'
+            command:'killall ffmpeg'
         }
     }  
 }
