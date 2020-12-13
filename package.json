@@ -17,6 +17,7 @@
   },
   "homepage": "https://gitlab.com/ideostreaming/ideostreaming-backend#readme",
   "dependencies": {
+    "child_process": "^1.0.2",
     "express": "^4.17.1",
     "sqlite3": "^5.0.0"
   }

@@ -10,6 +10,11 @@ const OutputTypes = {
             console.log(e)
             throw e
         }
+    },
+
+    getById: (id)=>{
+        const query = "select * from OutputTypes where id=?"
+        return dbHandler.executePreparedQuery(query,[id])
     }
 }
 

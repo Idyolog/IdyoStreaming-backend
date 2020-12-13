@@ -1,6 +1,6 @@
-const { rejects } = require("assert")
-const { resolve } = require("path")
 const fs = require ('fs')
+const exec = require('child_process').exec;
+const spawn = require('child_process').spawn;
 
 const utils = {
     readDir: (dir) => {
@@ -16,6 +16,17 @@ const utils = {
     },
     readDirSync: (dir) => {
         return fs.readdirSync(dir)
+    },
+
+    executeExternalCommand: (cmd)=>{        
+        let process = exec(cmd, function callback(error, stdout, stderr){
+            console.log("end")
+        });
+        /*let process = spawn(cmd, {
+            stdio: 'inherit',
+            shell: true
+          })*/
+        return process
     }
 }
 
