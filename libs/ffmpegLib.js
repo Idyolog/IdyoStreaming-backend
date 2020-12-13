@@ -1,7 +1,7 @@
 const ffmpegSettings = require('../settings/settings').ffmpeg
 const utils = require('../utils/utils')
 
-let processRunning = false
+//let processRunning = false
 
 const ffmpeg = {
     start: (inputs, outputs) => {
@@ -15,12 +15,12 @@ const ffmpeg = {
                 cmd += `${ffmpegSettings.start.output[output.outputType].prefix} ${output.output}`
             }
             console.log(cmd)
-            if(!processRunning){
-                processRunning = true
+            //if(!processRunning){
+            //    processRunning = true
                 utils.executeExternalCommand(cmd)
-            } else {
+            /*} else {
                 throw "Process Already Executing"
-            }
+            }*/
         } catch(e){
             throw(e)
         }
@@ -35,12 +35,12 @@ const ffmpeg = {
             process = null
         }*/
 
-        if(processRunning){
-            processRunning = false
+        //if(processRunning){
+          //  processRunning = false
             utils.executeExternalCommand(cmd)
-        } else {
+        /*} else {
             throw "Process Already Stopped"
-        }
+        }*/
     }
 }
 
