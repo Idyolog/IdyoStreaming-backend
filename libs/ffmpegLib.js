@@ -8,11 +8,13 @@ const ffmpeg = {
         try{
             let cmd = `ffmpeg `
             for(const input of inputs){
-                cmd += `${ffmpegSettings.start.input[input.inputType].prefix} -i ${input.input}`
+                const inp = ffmpegSettings.start.input[input.inputType].command.replace('%%input%%', input.input)
+                cmd += `${inp}`
             }
             cmd += ' '
             for(const output of outputs){
-                cmd += `${ffmpegSettings.start.output[output.outputType].prefix} ${output.output}`
+                const out = ffmpegSettings.start.output[output.outputType].command.replace('%%output%%', output.output)
+                cmd += `${out}`
             }
             console.log(cmd)
             //if(!processRunning){

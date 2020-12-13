@@ -16,15 +16,15 @@ let settings = {
         start:{
             input:{
                 webcam:{
-                    prefix:'-y -f vfwcap -r 25'
+                    command:'-y -f vfwcap -r 25 -i %%input%%'
                 }
             },
             output:{
                 file:{
-                    prefix: ''
+                    command: '%%output%%'
                 },
                 twitch:{
-                    prefix: '-c:v libx264 -preset fast -pix_fmt yuv420p -s 1280x800 -threads 0 -f flv'
+                    command: '-c:v libx264 -preset fast -pix_fmt yuv420p -s 1280x800 -threads 0 -f flv "%%output%%"'
                 }
             }
         },
